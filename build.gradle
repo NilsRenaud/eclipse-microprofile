@@ -3,7 +3,7 @@ apply plugin: 'liberty'
 
 group = 'org.nrenaud.microprofile.test'
 version = '1.0-SNAPSHOT'
-description = "Sample applciation using Microprofile."
+description = "Sample application using eclipse Microprofile."
 sourceCompatibility = 1.9
 targetCompatibility = 1.9
 
@@ -38,9 +38,7 @@ liberty {
     server {
         name = "${appName}Server"
         configFile = file("ext/conf/liberty/server.xml")
-        bootstrapProperties = ['default.http.port': testServerHttpPort,
-                               'default.https.port': testServerHttpsPort,
-                               'app.context.root': warContext]
+
         packageLiberty {
             archive = "$buildDir/${appName}.zip"
             include = "usr"
